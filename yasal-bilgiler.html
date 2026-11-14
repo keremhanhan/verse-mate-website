@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101116">
+  <meta name="description" content="Verse Mate Studios yasal bilgiler, politikalar ve site kullanım koşulları.">
+  <title>Yasal Bilgiler | Verse Mate Studios</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --bg: #101116;
+      --surface: #181a22;
+      --surface2: #20232d;
+      --white: #f1f2f5;
+      --muted: #a0a4b1;
+      --blue: #6485ff;
+      --line: #30333e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .navbar {
+      height: 78px;
+      padding: 0 9%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      background: #101116;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .symbol {
+      width: 27px;
+      height: 27px;
+      border: 2px solid var(--blue);
+      display: grid;
+      place-items: center;
+      color: var(--blue);
+      transform: rotate(45deg);
+    }
+
+    .symbol span { transform: rotate(-45deg); }
+
+    .back {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+    }
+
+    .back:hover { color: var(--blue); }
+
+    .hero {
+      padding: 105px 9% 85px;
+      background:
+        radial-gradient(ellipse at 80% 30%, #6485ff20, transparent 45%),
+        #14161e;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 24px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Barlow Condensed', Impact, sans-serif;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    h1 {
+      font-size: clamp(65px, 10vw, 115px);
+      line-height: .9;
+    }
+
+    h1 span { color: var(--blue); }
+
+    .hero p.description {
+      max-width: 650px;
+      margin-top: 25px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .content {
+      width: 82%;
+      max-width: 1100px;
+      margin: 75px auto 110px;
+    }
+
+    .intro {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+      max-width: 750px;
+      margin-bottom: 45px;
+    }
+
+    .document-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .document {
+      min-height: 210px;
+      padding: 30px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: .2s;
+    }
+
+    .document:hover {
+      border-color: var(--blue);
+      transform: translateY(-4px);
+    }
+
+    .document-number {
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .document h2 {
+      font-size: 32px;
+      margin: 24px 0 12px;
+    }
+
+    .document p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .document-link {
+      display: inline-block;
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      margin-top: 24px;
+    }
+
+    .document.disabled {
+      opacity: .65;
+      border-style: dashed;
+    }
+
+    .status {
+      color: #a6a8ae;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-top: 14px;
+    }
+
+    .studio-info {
+      margin-top: 65px;
+      padding: 35px;
+      background: var(--surface2);
+      border: 1px solid var(--line);
+    }
+
+    .studio-info h2 {
+      font-size: 40px;
+      margin-bottom: 22px;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 12px;
+    }
+
+    .info-row:last-child { border-bottom: none; }
+
+    .info-label { color: var(--muted); }
+
+    .info-value {
+      color: var(--white);
+      text-align: right;
+    }
+
+    .notice {
+      margin-top: 25px;
+      padding: 22px;
+      background: #6485ff0c;
+      border-left: 3px solid var(--blue);
+    }
+
+    .notice strong {
+      display: block;
+      color: var(--blue);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+
+    .notice p {
+      color: #b8bdca;
+      font-size: 11px;
+      line-height: 1.9;
+    }
+
+    footer {
+      padding: 40px 9% 25px;
+      background: #0b0c10;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-top,
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-top { padding-bottom: 25px; }
+
+    .footer-slogan {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      color: #747987;
+      font-size: 9px;
+      letter-spacing: 1px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      margin-top: 22px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    .footer-links a:hover { color: var(--blue); }
+
+    @media(max-width: 650px) {
+      .navbar { padding: 0 6%; }
+
+      .brand { font-size: 10px; }
+
+      .back { font-size: 9px; }
+
+      .hero { padding: 85px 6% 65px; }
+
+      .content {
+        width: 88%;
+        margin: 55px auto 75px;
+      }
+
+      .document-grid { grid-template-columns: 1fr; }
+
+      .document { min-height: 190px; }
+
+      .studio-info { padding: 25px; }
+
+      .info-row {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .info-value { text-align: left; }
+
+      footer { padding: 30px 6% 25px; }
+
+      .footer-top,
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <a href="/" class="brand">
+      <div class="symbol"><span>V</span></div>
+      <span>VERSE MATE STUDIOS</span>
+    </a>
+
+    <a href="/" class="back">← ANA SAYFA</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">VERSE MATE STUDIOS / CORPORATE</p>
+
+      <h1>YASAL<br><span>BİLGİLER.</span></h1>
+
+      <p class="description">
+        Verse Mate Studios internet sitesine ilişkin yasal
+        bilgilendirmeler, politikalar ve kullanım belgeleri.
+        Şeffaflık ve bilgilendirme yaklaşımımızın bir parçası.
+      </p>
+    </section>
+
+    <section class="content">
+
+      <p class="intro">
+        Bu bölüm, Verse Mate Studios internet sitesine ilişkin
+        bilgilendirme metinlerini bir araya getirir. Belgeler,
+        sitenin mevcut özellikleri ve doğrulanmış faaliyetleri
+        esas alınarak hazırlanmalı ve gerektiğinde güncellenmelidir.
+      </p>
+
+      <div class="document-grid">
+
+        <a class="document" href="/gizlilik.html">
+          <div>
+            <span class="document-number">DOCUMENT / 001</span>
+            <h2>GİZLİLİK POLİTİKASI.</h2>
+            <p>
+              Kişisel veriler, teknik bağlantı kayıtları ve
+              gizlilik uygulamaları hakkında bilgilendirme.
+            </p>
+          </div>
+          <span class="document-link">BELGEYİ GÖRÜNTÜLE ↗</span>
+        </a>
+
+        <article class="document disabled">
+          <div>
+            <span class="document-number">DOCUMENT / 002</span>
+            <h2>KULLANIM KOŞULLARI.</h2>
+            <p>
+              İnternet sitesinin kullanımına ilişkin kurallar,
+              sorumluluklar ve içerik koşulları.
+            </p>
+          </div>
+          <span class="status">HAZIRLANACAK</span>
+        </article>
+
+        <article class="document disabled">
+          <div>
+            <span class="document-number">DOCUMENT / 003</span>
+            <h2>ÇEREZ BİLGİLENDİRMESİ.</h2>
+            <p>
+              Çerezler ve benzeri teknolojilerin kullanımı
+              hakkında açıklamalar.
+            </p>
+          </div>
+          <span class="status">TEKNİK İNCELEME BEKLİYOR</span>
+        </article>
+
+        <article class="document disabled">
+          <div>
+            <span class="document-number">DOCUMENT / 004</span>
+            <h2>İLETİŞİM VE KÜNYE.</h2>
+            <p>
+              Stüdyo kimliği, doğrulanmış iletişim kanalları
+              ve yayıncı bilgileri.
+            </p>
+          </div>
+          <span class="status">BİLGİLER DOĞRULANACAK</span>
+        </article>
+
+      </div>
+
+      <section class="studio-info">
+        <p class="eyebrow">STUDIO / INFORMATION</p>
+        <h2>STÜDYO BİLGİLERİ.</h2>
+
+        <div class="info-row">
+          <span class="info-label">Marka adı</span>
+          <span class="info-value">Verse Mate Studios</span>
+        </div>
+
+        <div class="info-row">
+          <span class="info-label">Proje</span>
+          <span class="info-value">Bağımsız oyun geliştirme girişimi</span>
+        </div>
+
+        <div class="info-row">
+          <span class="info-label">İnternet sitesi</span>
+          <span class="info-value">Resmî alan adı henüz belirlenmedi</span>
+        </div>
+
+        <div class="info-row">
+          <span class="info-label">Ticari unvan</span>
+          <span class="info-value">Henüz doğrulanmadı</span>
+        </div>
+
+        <div class="info-row">
+          <span class="info-label">Resmî iletişim</span>
+          <span class="info-value">Henüz belirlenmedi</span>
+        </div>
+
+        <div class="notice">
+          <strong>YAYIN ÖNCESİ DOĞRULAMA</strong>
+          <p>
+            Verse Mate Studios marka adı, tek başına tescilli bir
+            şirket veya tüzel kişilik bulunduğu anlamına gelmez.
+            Ticari unvan, adres, veri sorumlusu ve resmî iletişim
+            bilgileri doğrulanmadan bu alanlarda kesin bilgi
+            yayımlanmamalıdır.
+          </p>
+        </div>
+      </section>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <a href="/" class="brand">
+        <div class="symbol"><span>V</span></div>
+        <span>VERSE MATE STUDIOS</span>
+      </a>
+
+      <p class="footer-slogan">CREATE BEYOND LIMITS.</p>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 VERSE MATE STUDIOS</span>
+      <span>LEGAL INFORMATION</span>
+    </div>
+
+    <div class="footer-links">
+      <a href="/gizlilik.html">GİZLİLİK POLİTİKASI</a>
+      <a href="/">ANA SAYFA</a>
+    </div>
+  </footer>
+
+</body>
+</html>

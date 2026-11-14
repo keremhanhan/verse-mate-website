@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101116">
+  <meta name="description" content="Verse Mate Studios gizlilik politikası ve kişisel verilerin korunmasına ilişkin bilgilendirme.">
+  <title>Gizlilik Politikası | Verse Mate Studios</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --bg: #101116;
+      --surface: #181a22;
+      --white: #f1f2f5;
+      --muted: #a0a4b1;
+      --blue: #6485ff;
+      --line: #30333e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .navbar {
+      height: 78px;
+      padding: 0 9%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      background: #101116;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .brand-symbol {
+      width: 27px;
+      height: 27px;
+      border: 2px solid var(--blue);
+      display: grid;
+      place-items: center;
+      color: var(--blue);
+      transform: rotate(45deg);
+      font-weight: 900;
+    }
+
+    .brand-symbol span {
+      transform: rotate(-45deg);
+    }
+
+    .back-link {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: var(--muted);
+      transition: .2s;
+    }
+
+    .back-link:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      padding: 105px 9% 80px;
+      background:
+        radial-gradient(ellipse at 80% 30%, #6485ff20, transparent 45%),
+        #14161e;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 25px;
+    }
+
+    h1, h2 {
+      font-family: 'Barlow Condensed', Impact, sans-serif;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    h1 {
+      font-size: clamp(65px, 10vw, 115px);
+      line-height: .9;
+    }
+
+    h1 span {
+      color: var(--blue);
+    }
+
+    .hero-description {
+      max-width: 650px;
+      margin-top: 25px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .updated {
+      margin-top: 30px;
+      color: #777d8e;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+    }
+
+    .content {
+      width: 82%;
+      max-width: 1050px;
+      margin: 80px auto 110px;
+    }
+
+    .notice {
+      padding: 22px 25px;
+      border: 1px solid #6485ff55;
+      border-left: 3px solid var(--blue);
+      background: #6485ff0c;
+      margin-bottom: 55px;
+    }
+
+    .notice strong {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+
+    .notice p {
+      font-size: 12px;
+      line-height: 1.8;
+      color: #c0c3ce;
+    }
+
+    .policy-section {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-number {
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 13px;
+    }
+
+    h2 {
+      font-size: 35px;
+      margin-bottom: 18px;
+    }
+
+    .policy-section p {
+      color: #b2b5c0;
+      font-size: 13px;
+      line-height: 2;
+      margin-bottom: 13px;
+    }
+
+    .policy-section ul {
+      padding-left: 22px;
+      color: #b2b5c0;
+      font-size: 13px;
+      line-height: 2.1;
+    }
+
+    .placeholder {
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    .contact-box {
+      margin-top: 55px;
+      padding: 35px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    .contact-box h2 {
+      font-size: 38px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .contact-box a {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    footer {
+      padding: 35px 9%;
+      background: #0b0c10;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-top,
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-top {
+      padding-bottom: 25px;
+    }
+
+    .footer-slogan {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      color: #747987;
+      font-size: 9px;
+      letter-spacing: 1px;
+    }
+
+    @media(max-width: 650px) {
+      .navbar {
+        padding: 0 6%;
+      }
+
+      .brand {
+        font-size: 11px;
+      }
+
+      .back-link {
+        font-size: 9px;
+      }
+
+      .hero {
+        padding: 85px 6% 65px;
+      }
+
+      .content {
+        width: 88%;
+        margin: 55px auto 75px;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
+      .contact-box {
+        padding: 25px;
+      }
+
+      footer {
+        padding: 30px 6%;
+      }
+
+      .footer-top,
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <a href="/" class="brand">
+      <div class="brand-symbol"><span>V</span></div>
+      <span>VERSE MATE STUDIOS</span>
+    </a>
+
+    <a href="/" class="back-link">← ANA SAYFA</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">VERSE MATE STUDIOS / YASAL BİLGİLER</p>
+
+      <h1>GİZLİLİK<br><span>POLİTİKASI.</span></h1>
+
+      <p class="hero-description">
+        Bu sayfa, Verse Mate Studios internet sitesini ziyaret eden
+        kişilerin gizliliği ve kişisel verilerin işlenmesi hakkında
+        bilgilendirme amacıyla hazırlanmıştır.
+      </p>
+
+      <div class="updated">
+        SON GÜNCELLEME: 14 KASIM 2026
+      </div>
+    </section>
+
+    <div class="content">
+
+      <div class="notice">
+        <strong>ÖNEMLİ BİLGİLENDİRME</strong>
+        <p>
+          Bu metin, internet sitesinin mevcut özellikleri esas alınarak
+          hazırlanmış bir taslaktır. Yayınlanmadan önce gerçek veri
+          işleme faaliyetleri, veri sorumlusu bilgileri ve hizmet
+          sağlayıcıları doğrulanmalıdır.
+        </p>
+      </div>
+
+      <section class="policy-section">
+        <div class="section-number">01 / GENEL BİLGİ</div>
+        <h2>BU POLİTİKA HAKKINDA</h2>
+
+        <p>
+          Verse Mate Studios, dijital deneyimler ve oyun projeleri
+          geliştirmeyi hedefleyen bağımsız bir stüdyo girişimidir.
+          Bu internet sitesi stüdyo ve projeleri hakkında bilgi sunar.
+        </p>
+
+        <p>
+          Bu politika, internet sitesinin ziyaret edilmesi sırasında
+          oluşabilecek veri işleme faaliyetleri hakkında açıklama
+          sağlamayı amaçlar.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <div class="section-number">02 / VERİ İŞLEME</div>
+        <h2>TOPLANAN BİLGİLER</h2>
+
+        <p>
+          Sitenin mevcut sürümünde üyelik, kullanıcı hesabı,
+          iletişim formu veya bülten aboneliği bulunmamaktadır.
+          Bu nedenle site üzerinden doğrudan kullanıcı hesabı
+          bilgisi talep edilmemektedir.
+        </p>
+
+        <p>
+          Bununla birlikte, kullanılan barındırma ve internet
+          altyapısına bağlı olarak aşağıdaki teknik kayıtlar
+          oluşabilir:
+        </p>
+
+        <ul>
+          <li>IP adresi ve bağlantı bilgileri</li>
+          <li>Tarayıcı ve cihaz bilgileri</li>
+          <li>İstek tarihi ve saati</li>
+          <li>Sunucu güvenliğiyle ilgili teknik kayıtlar</li>
+        </ul>
+
+        <p>
+          Bu bilgilerin gerçekten işlenip işlenmediği ve ne kadar
+          süre saklandığı, kullanılan hizmet sağlayıcıların
+          yapılandırmasına bağlıdır.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <div class="section-number">03 / KULLANIM AMACI</div>
+        <h2>VERİLERİN KULLANIMI</h2>
+
+        <p>
+          Teknik bağlantı kayıtları, hizmetin çalıştırılması,
+          sistem güvenliğinin sağlanması, teknik sorunların
+          incelenmesi ve yetkisiz erişimlerin önlenmesi gibi
+          amaçlarla işlenebilir.
+        </p>
+
+        <p>
+          Sitenin mevcut sürümünde reklam hedefleme veya
+          kullanıcı profili oluşturma amacıyla tasarlanmış
+          bir sistem bulunmamaktadır.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <div class="section-number">04 / ÜÇÜNCÜ TARAF HİZMETLER</div>
+        <h2>DIŞ HİZMETLER</h2>
+
+        <p>
+          Sitede Google Fonts hizmeti kullanılmaktadır.
+          Yazı tiplerinin yüklenmesi sırasında tarayıcınız
+          Google tarafından sağlanan sunucularla bağlantı
+          kurabilir.
+        </p>
+
+        <p>
+          Ayrıca sitenin barındırıldığı platform ve altyapı
+          sağlayıcıları teknik verileri kendi hizmet koşulları
+          kapsamında işleyebilir.
+        </p>
+
+        <p>
+          Kullanılan üçüncü taraf hizmetlerin güncel gizlilik
+          politikaları ayrıca incelenmelidir.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <div class="section-number">05 / ÇEREZLER</div>
+        <h2>ÇEREZ KULLANIMI</h2>
+
+        <p>
+          Mevcut site tasarımında kullanıcı takibi veya reklam
+          amacıyla geliştirilmiş bir çerez sistemi bulunmamaktadır.
+        </p>
+
+        <p>
+          Barındırma altyapısı veya üçüncü taraf hizmetlerin
+          teknik amaçlı çerez ya da benzeri teknolojiler
+          kullanıp kullanmadığı ayrıca doğrulanmalıdır.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <div class="section-number">06 / GÜVENLİK</div>
+        <h2>VERİ GÜVENLİĞİ</h2>
+
+        <p>
+          Site altyapısının güvenliğini korumak ve yetkisiz
+          erişim risklerini azaltmak için uygun teknik ve
+          idari önlemlerin uygulanması hedeflenmektedir.
+        </p>
+
+        <p>
+          İnternet üzerinden gerçekleştirilen hiçbir veri
+          aktarımının mutlak güvenli olduğu garanti edilemez.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <div class="section-number">07 / HAKLAR VE BAŞVURULAR</div>
+        <h2>İLGİLİ KİŞİLERİN HAKLARI</h2>
+
+        <p>
+          Kişisel verilerinizin işlendiği durumlarda, yürürlükteki
+          mevzuat kapsamında sahip olduğunuz haklar ve başvuru
+          yöntemleri, veri sorumlusu ve işleme faaliyetleri
+          doğrulandıktan sonra burada açıklanmalıdır.
+        </p>
+
+        <p>
+          Türkiye'de uygulanabilir olduğu ölçüde 6698 sayılı
+          Kişisel Verilerin Korunması Kanunu (KVKK) hükümleri
+          dikkate alınmalıdır.
+        </p>
+      </section>
+
+      <section class="policy-section">
+        <div class="section-number">08 / GÜNCELLEMELER</div>
+        <h2>POLİTİKA DEĞİŞİKLİKLERİ</h2>
+
+        <p>
+          Siteye kullanıcı hesapları, iletişim formları,
+          analiz araçları veya yeni üçüncü taraf hizmetler
+          eklendiğinde bu politika yeniden değerlendirilip
+          güncellenmelidir.
+        </p>
+
+        <p>
+          Güncel politika bu sayfa üzerinden yayımlanacaktır.
+        </p>
+      </section>
+
+      <div class="contact-box">
+        <p class="eyebrow">09 / İLETİŞİM</p>
+        <h2>GİZLİLİK HAKKINDA<br>BİZE ULAŞIN.</h2>
+
+        <p>
+          Gizlilik politikasıyla ilgili sorularınız için
+          doğrulanmış resmî iletişim adresimizi kullanabilirsiniz.
+        </p>
+
+        <span class="placeholder">
+          [RESMÎ İLETİŞİM E-POSTASI EKLENECEK]
+        </span>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <a href="/" class="brand">
+        <div class="brand-symbol"><span>V</span></div>
+        <span>VERSE MATE STUDIOS</span>
+      </a>
+
+      <p class="footer-slogan">CREATE BEYOND LIMITS.</p>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 VERSE MATE STUDIOS</span>
+      <span>YASAL BİLGİLER</span>
+      <a href="/yasal-bilgiler.html">YASAL BİLGİLER</a>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,975 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101116">
+  <meta name="description" content="Verse Mate Studios. Özgün oyunlar, dijital dünyalar ve interaktif deneyimler geliştiriyoruz.">
+  <title>VERSE MATE STUDIOS | Create Beyond</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+    :root {
+      --bg: #101116;
+      --surface: #181a22;
+      --surface2: #20232d;
+      --white: #f1f2f5;
+      --muted: #969aa8;
+      --blue: #6485ff;
+      --line: #30333e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: 82%;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .navbar {
+      height: 82px;
+      padding: 0 9%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      background: #101116ed;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      backdrop-filter: blur(15px);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .logo-symbol {
+      width: 30px;
+      height: 30px;
+      border: 2px solid var(--blue);
+      display: grid;
+      place-items: center;
+      color: var(--blue);
+      font-size: 17px;
+      font-weight: 900;
+      transform: rotate(45deg);
+    }
+
+    .logo-symbol span {
+      transform: rotate(-45deg);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      transition: .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-contact {
+      color: var(--blue) !important;
+    }
+
+    .menu-button {
+      display: none;
+      color: white;
+      background: transparent;
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 780px;
+      padding: 170px 9% 100px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 78% 45%, #6485ff25, transparent 38%),
+        linear-gradient(120deg, #101116, #151822);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(#ffffff08 1px, transparent 1px),
+        linear-gradient(90deg, #ffffff08 1px, transparent 1px);
+      background-size: 65px 65px;
+      mask-image: linear-gradient(90deg, transparent, black);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 27px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Barlow Condensed', Impact, sans-serif;
+      text-transform: uppercase;
+      font-weight: 900;
+      line-height: .92;
+    }
+
+    h1 {
+      font-size: clamp(90px, 14vw, 180px);
+      letter-spacing: -4px;
+    }
+
+    h1 span {
+      color: var(--blue);
+    }
+
+    .hero-subtitle {
+      margin-top: 27px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      color: #c6c9d3;
+    }
+
+    .hero-description {
+      max-width: 520px;
+      margin-top: 25px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      margin-top: 38px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      padding: 17px 24px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 25px;
+      transition: .2s;
+    }
+
+    .button-primary {
+      background: var(--blue);
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: #829bff;
+      transform: translateY(-3px);
+    }
+
+    .button-outline {
+      border: 1px solid #555967;
+      color: var(--white);
+    }
+
+    .button-outline:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    .hero-index {
+      position: absolute;
+      right: 9%;
+      bottom: 55px;
+      color: #777d8e;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .hero-orbit {
+      position: absolute;
+      right: 7%;
+      top: 23%;
+      width: 430px;
+      height: 430px;
+      border: 1px solid #6485ff30;
+      border-radius: 50%;
+      transform: rotate(-25deg);
+    }
+
+    .hero-orbit::before {
+      content: "";
+      position: absolute;
+      inset: 45px;
+      border: 1px solid #6485ff35;
+      border-radius: 50%;
+    }
+
+    .hero-orbit::after {
+      content: "VM";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: #6485ff;
+      font: 900 140px 'Barlow Condensed', sans-serif;
+      opacity: .16;
+    }
+
+    /* INTRO */
+
+    .intro {
+      padding: 125px 9%;
+      background: #f0f1f5;
+      color: #101116;
+    }
+
+    .intro .eyebrow {
+      color: #4969df;
+    }
+
+    .intro h2 {
+      font-size: clamp(55px, 8vw, 105px);
+      max-width: 1000px;
+    }
+
+    .intro h2 span {
+      color: #6485ff;
+    }
+
+    .intro-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-top: 45px;
+      align-items: start;
+    }
+
+    .intro-bottom p {
+      color: #626675;
+      font-size: 14px;
+      line-height: 1.9;
+      max-width: 540px;
+    }
+
+    .intro-label {
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #4969df;
+    }
+
+    /* ABOUT */
+
+    .about {
+      padding: 120px 9%;
+      background: var(--bg);
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 55px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(55px, 8vw, 90px);
+    }
+
+    .section-heading p {
+      max-width: 330px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .value-card {
+      padding: 35px;
+      min-height: 260px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      transition: .25s;
+    }
+
+    .value-card:hover {
+      border-color: var(--blue);
+      transform: translateY(-5px);
+    }
+
+    .value-number {
+      color: var(--blue);
+      font-size: 11px;
+      letter-spacing: 2px;
+      font-weight: 900;
+    }
+
+    .value-card h3 {
+      font-size: 35px;
+      margin: 55px 0 15px;
+    }
+
+    .value-card p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+      padding: 120px 9%;
+      background: var(--surface);
+    }
+
+    .projects .section-heading {
+      margin-bottom: 45px;
+    }
+
+    .project-card {
+      min-height: 430px;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      background: #11131a;
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .project-visual {
+      position: relative;
+      min-height: 430px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 50%, #b91c2c55, transparent 45%),
+        linear-gradient(135deg, #29212a, #11131a);
+    }
+
+    .project-visual::before {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 1px solid #ffffff25;
+      transform: rotate(45deg);
+    }
+
+    .project-visual strong {
+      position: relative;
+      z-index: 1;
+      font: 900 clamp(70px, 10vw, 130px) 'Barlow Condensed', sans-serif;
+      letter-spacing: -3px;
+    }
+
+    .project-info {
+      padding: 55px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .project-info h3 {
+      font-size: 65px;
+      margin-bottom: 20px;
+    }
+
+    .project-info p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.9;
+      margin-bottom: 30px;
+    }
+
+    .project-status {
+      color: var(--blue);
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    /* PROCESS */
+
+    .process {
+      padding: 120px 9%;
+      background: #f0f1f5;
+      color: #101116;
+    }
+
+    .process .eyebrow {
+      color: #4969df;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 55px;
+      border-top: 1px solid #c9ccd6;
+    }
+
+    .process-item {
+      padding: 30px 22px 20px 0;
+      border-right: 1px solid #c9ccd6;
+    }
+
+    .process-item:not(:first-child) {
+      padding-left: 22px;
+    }
+
+    .process-item:last-child {
+      border-right: none;
+    }
+
+    .process-item b {
+      font: 900 45px 'Barlow Condensed', sans-serif;
+      color: #6485ff;
+    }
+
+    .process-item h3 {
+      font-size: 27px;
+      margin: 25px 0 12px;
+    }
+
+    .process-item p {
+      font-size: 11px;
+      color: #626675;
+      line-height: 1.8;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      padding: 115px 9%;
+      background:
+        radial-gradient(ellipse at 80% 50%, #6485ff25, transparent 40%),
+        #14161e;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+    }
+
+    .contact h2 {
+      font-size: clamp(55px, 8vw, 95px);
+    }
+
+    .contact p {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    footer {
+      padding: 45px 9% 25px;
+      background: #0b0c10;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 35px;
+      gap: 25px;
+    }
+
+    .footer-slogan {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 18px;
+      color: #747987;
+      font-size: 9px;
+      letter-spacing: 1px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      margin-top: 22px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    .footer-links a:hover {
+      color: var(--blue);
+    }
+
+    @media(max-width: 900px) {
+      .hero-orbit {
+        right: -180px;
+        opacity: .6;
+      }
+
+      .project-card {
+        grid-template-columns: 1fr;
+      }
+
+      .project-visual {
+        min-height: 300px;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+      }
+
+      .process-item:nth-child(2) {
+        border-right: none;
+      }
+    }
+
+    @media(max-width: 650px) {
+      .navbar {
+        padding: 0 6%;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 82px;
+        left: 0;
+        width: 100%;
+        padding: 25px 6%;
+        background: #101116;
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hero {
+        min-height: 730px;
+        padding: 150px 6% 100px;
+      }
+
+      .hero-orbit {
+        right: -250px;
+        top: 35%;
+        width: 350px;
+        height: 350px;
+      }
+
+      .hero-index {
+        right: 6%;
+        font-size: 8px;
+      }
+
+      .intro,
+      .about,
+      .projects,
+      .process {
+        padding: 85px 6%;
+      }
+
+      .intro-bottom {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .values {
+        grid-template-columns: 1fr;
+      }
+
+      .value-card {
+        min-height: 220px;
+      }
+
+      .project-info {
+        padding: 35px 25px;
+      }
+
+      .project-info h3 {
+        font-size: 55px;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-item,
+      .process-item:not(:first-child) {
+        padding: 25px 0;
+        border-right: none;
+        border-bottom: 1px solid #c9ccd6;
+      }
+
+      .contact {
+        padding: 85px 6%;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      footer {
+        padding: 40px 6% 25px;
+      }
+
+      .footer-top,
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <a href="#anasayfa" class="logo">
+      <div class="logo-symbol"><span>V</span></div>
+      <span>VERSE MATE STUDIOS</span>
+    </a>
+
+    <button class="menu-button" aria-expanded="false" aria-controls="nav-links">
+      MENÜ
+    </button>
+
+    <nav class="nav-links" id="nav-links">
+      <a href="#anasayfa">ANA SAYFA</a>
+      <a href="#hakkimizda">STÜDYO</a>
+      <a href="#projeler">PROJELER</a>
+      <a href="#surec">YAKLAŞIMIMIZ</a>
+      <a href="#iletisim" class="nav-contact">İLETİŞİM ↗</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero" id="anasayfa">
+      <div class="hero-orbit"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">INDEPENDENT GAME DEVELOPMENT STUDIO</p>
+
+        <h1>VERSE MATE<span>.</span></h1>
+
+        <p class="hero-subtitle">CREATE BEYOND LIMITS.</p>
+
+        <p class="hero-description">
+          Fikirleri interaktif deneyimlere dönüştürüyoruz.
+          Özgün oyun dünyaları, yaratıcı sistemler ve
+          dijital deneyimler üzerine çalışıyoruz.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projeler" class="button button-primary">
+            PROJELERİ KEŞFET ↗
+          </a>
+
+          <a href="#hakkimizda" class="button button-outline">
+            STÜDYOMUZU TANI
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-index">
+        VERSE MATE STUDIOS / EST. 2026
+      </div>
+    </section>
+
+    <section class="intro" id="hakkimizda">
+      <p class="eyebrow">01 / BİZ KİMİZ?</p>
+
+      <h2>
+        FİKİRLERİ<br>
+        <span>DENEYİMLERE</span><br>
+        DÖNÜŞTÜRÜYORUZ.
+      </h2>
+
+      <div class="intro-bottom">
+        <p>
+          Verse Mate Studios, özgün dijital deneyimler ve oyun
+          projeleri geliştirmeyi hedefleyen bağımsız bir stüdyo
+          girişimidir. Tasarım, teknoloji ve oyun geliştirmeyi
+          aynı üretim sürecinde buluşturuyoruz.
+        </p>
+
+        <div>
+          <div class="intro-label">OUR VISION</div>
+          <p>
+            Kendi kimliğine sahip, özgün ve akılda kalıcı
+            dijital dünyalar oluşturmak.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">02 / STÜDYO FELSEFESİ</p>
+          <h2>NASIL<br>ÜRETİYORUZ?</h2>
+        </div>
+
+        <p>
+          Her projenin kendine özgü bir kimliği olmalı.
+          Bizim için iyi bir deneyim, doğru fikirle başlar.
+        </p>
+      </div>
+
+      <div class="values">
+        <article class="value-card">
+          <span class="value-number">01 / CREATIVITY</span>
+          <h3>YARATICILIK.</h3>
+          <p>
+            Alışılmışın dışına çıkan fikirler ve özgün
+            oyun dünyaları geliştirmeyi önemsiyoruz.
+          </p>
+        </article>
+
+        <article class="value-card">
+          <span class="value-number">02 / TECHNOLOGY</span>
+          <h3>TEKNOLOJİ.</h3>
+          <p>
+            Modern geliştirme araçlarını kullanarak
+            fikirleri çalışan deneyimlere dönüştürmeyi hedefliyoruz.
+          </p>
+        </article>
+
+        <article class="value-card">
+          <span class="value-number">03 / IDENTITY</span>
+          <h3>KİMLİK.</h3>
+          <p>
+            Her projenin kendine ait bir görsel dili,
+            atmosferi ve karakteri olmalı.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="projects" id="projeler">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">03 / PROJE PORTFÖYÜ</p>
+          <h2>ÜRETTİKLERİMİZ.</h2>
+        </div>
+
+        <p>
+          Stüdyomuzun geliştirme sürecindeki projelerini keşfedin.
+        </p>
+      </div>
+
+      <article class="project-card">
+        <div class="project-visual">
+          <strong>IGNITION</strong>
+        </div>
+
+        <div class="project-info">
+          <span class="project-status">
+            GAME PROJECT / IN DEVELOPMENT
+          </span>
+
+          <h3>IGNITION.</h3>
+
+          <p>
+            Takım koordinasyonu, taktiksel kararlar ve rekabetçi
+            karşılaşmalar üzerine tasarlanan 5'e 5 FPS projemiz.
+          </p>
+
+          <a
+            href="http://localhost:5174/"
+            class="button button-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PROJE SAYFASINI AÇ ↗
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <section class="process" id="surec">
+      <p class="eyebrow">04 / GELİŞTİRME YAKLAŞIMI</p>
+
+      <h2 style="font-size:clamp(55px,8vw,95px)">
+        FİKİRDEN<br>GERÇEĞE.
+      </h2>
+
+      <div class="process-grid">
+        <article class="process-item">
+          <b>01</b>
+          <h3>FİKİR</h3>
+          <p>
+            Projenin amacını, hedeflerini ve temel deneyimini belirlemek.
+          </p>
+        </article>
+
+        <article class="process-item">
+          <b>02</b>
+          <h3>TASARIM</h3>
+          <p>
+            Oyun sistemlerini, görsel kimliği ve kullanıcı deneyimini planlamak.
+          </p>
+        </article>
+
+        <article class="process-item">
+          <b>03</b>
+          <h3>GELİŞTİRME</h3>
+          <p>
+            Tasarımları çalışan sistemlere ve oynanabilir prototiplere dönüştürmek.
+          </p>
+        </article>
+
+        <article class="process-item">
+          <b>04</b>
+          <h3>İYİLEŞTİRME</h3>
+          <p>
+            Testler ve geri bildirimlerle deneyimi geliştirmek.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="iletisim">
+      <div>
+        <p class="eyebrow">05 / İLETİŞİM</p>
+        <h2>BİR FİKRİN<br>VAR MI?</h2>
+        <p>
+          Projeler, iş birlikleri ve stüdyo hakkında sorular için
+          bizimle iletişime geçebilirsin.
+        </p>
+      </div>
+
+      <a href="mailto:contact@versemate.com" class="button button-primary">
+        E-POSTA GÖNDER ↗
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-top">
+      <a href="#anasayfa" class="logo">
+        <div class="logo-symbol"><span>V</span></div>
+        <span>VERSE MATE STUDIOS</span>
+      </a>
+
+      <p class="footer-slogan">CREATE BEYOND LIMITS.</p>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 VERSE MATE STUDIOS</span>
+      <span>INDEPENDENT GAME DEVELOPMENT</span>
+      <span>ALL RIGHTS RESERVED</span>
+    </div>
+
+    <div class="footer-links">
+      <a href="/gizlilik.html">GİZLİLİK POLİTİKASI</a>
+      <a href="#anasayfa">YUKARI ÇIK ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector(".menu-button");
+    const nav = document.querySelector("#nav-links");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("open");
+
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.textContent = isOpen ? "KAPAT" : "MENÜ";
+    });
+
+    document.querySelectorAll("#nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.textContent = "MENÜ";
+      });
+    });
+  </script>
+
+</body>
+</html>
